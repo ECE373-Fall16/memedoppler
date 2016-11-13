@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    >
 
     <ImageView
         android:id="@+id/meme_doppler_top"
@@ -17,12 +18,16 @@
         android:src="@drawable/memedoppler"
         />
 
-    <ImageView
+    <Button
         android:id="@+id/snowmeme"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/snowmemexxxhdpi"
+        android:layout_height="1250px"
+        android:text=""
+        android:background="@drawable/snowmemexxxhdpi"
         android:layout_below="@+id/meme_doppler_top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="largeImage"
         />
 
     <!--<EditText android:id="@+id/edit_message"
