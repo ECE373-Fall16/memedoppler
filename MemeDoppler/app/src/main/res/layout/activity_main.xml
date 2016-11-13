@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
-    <EditText android:id="@+id/edit_message"
+    android:orientation="horizontal"
+    android:background="@color/colorBackground">
+
+    <ImageView
+        android:id="@+id/meme_doppler_top"
+        android:layout_width="match_parent"
+        android:layout_height="230px"
+        android:layout_gravity="top"
+        android:paddingTop="15px"
+        android:paddingBottom="15px"
+        android:src="@drawable/memedoppler"
+        />
+
+    <ImageView
+        android:id="@+id/snowmeme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/snowmemexxxhdpi"
+        android:layout_below="@+id/meme_doppler_top"
+        />
+
+    <!--<EditText android:id="@+id/edit_message"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,5 +36,5 @@
         android:layout_height="wrap_content"
         android:text="@string/button_send"
         android:onClick="sendMessage"
-        />
-</LinearLayout>
+        /> -->
+</RelativeLayout>
