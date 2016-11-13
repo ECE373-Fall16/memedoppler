@@ -28,7 +28,31 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="largeImage"
+        android:src="@drawable/snowmemexxxhdpi"
+        android:paddingLeft="200px"
+        android:paddingRight="200px"
         />
+
+    <TextView
+        android:id="@+id/current_weather_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="current date and time"
+        android:textAlignment="center"
+        android:paddingTop="15px"
+        android:paddingBottom="15px"
+        android:layout_below="@+id/snowmeme"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/snowmeme"
+        android:background="@color/colorPrimaryDark"
+        android:columnCount="4"
+        android:rowCount="4">
+
+    </GridLayout>
 
     <!--<EditText android:id="@+id/edit_message"
         android:layout_weight="1"
