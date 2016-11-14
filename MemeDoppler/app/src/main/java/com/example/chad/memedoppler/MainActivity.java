@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(MainActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(MainActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
         Calendar c = Calendar.getInstance();
         int date = c.get(Calendar.DATE);
         // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
