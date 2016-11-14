@@ -16,7 +16,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayMessageActivity" />
-        <activity android:name=".ExpandedMeme"></activity>
+        <activity android:name=".ExpandedMeme" />
+        <activity android:name=".ExpandedForecastOne" />
+        <activity android:name=".ExpandedForecastTwo" />
+        <activity android:name=".ExpandedForecastThree" />
+        <activity android:name=".ExpandedForecastFour" />
+        <activity android:name=".ExpandedForecastFive" />
+        <activity android:name=".ExpandedForecastSix"></activity>
     </application>
 
 </manifest>

@@ -40,4 +40,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ExpandedMeme.class);
         startActivity(intent);
     }
+    public void ExpandedForecastOne(View view) {
+        Intent intent = new Intent(this, ExpandedForecastOne.class);
+        startActivity(intent);
+    }
+    public void ExpandedForecastTwo(View view) {
+        Intent intent = new Intent(this, ExpandedForecastTwo.class);
+        startActivity(intent);
+    }
+    public void ExpandedForecastThree(View view) {
+        Intent intent = new Intent(this, ExpandedForecastThree.class);
+        startActivity(intent);
+    }
+    public void ExpandedForecastFour(View view) {
+        Intent intent = new Intent(this, ExpandedForecastFour.class);
+        startActivity(intent);
+    }
+    public void ExpandedForecastFive(View view) {
+        Intent intent = new Intent(this, ExpandedForecastFive.class);
+        startActivity(intent);
+    }
+    public void ExpandedForecastSix(View view) {
+        Intent intent = new Intent(this, ExpandedForecastSix.class);
+        startActivity(intent);
+    }
 }
