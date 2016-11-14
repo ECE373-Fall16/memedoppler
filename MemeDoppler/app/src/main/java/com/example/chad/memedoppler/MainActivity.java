@@ -31,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
         dank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
             }
         });
-
     }
     public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -76,5 +75,12 @@ public class MainActivity extends AppCompatActivity {
     public void NotDank(View view) {
         Intent intent = new Intent(this, NotDank.class);
         startActivity(intent);
+        Button notDank = (Button) findViewById(R.id.NotDank);
+        notDank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
