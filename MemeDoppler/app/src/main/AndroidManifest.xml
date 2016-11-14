@@ -23,7 +23,7 @@
         <activity android:name=".ExpandedForecastFour" />
         <activity android:name=".ExpandedForecastFive" />
         <activity android:name=".ExpandedForecastSix" />
-        <activity android:name=".NotDank"></activity>
+        <activity android:name=".NotDank" />
     </application>
 
 </manifest>

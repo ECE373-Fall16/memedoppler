@@ -9,6 +9,7 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
         int date = c.get(Calendar.DATE);
         // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
         // currentWeatherText.setText(date);
+        Button dank = (Button) findViewById(R.id.Dank);
+        dank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
     public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
