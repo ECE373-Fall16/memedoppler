@@ -64,4 +64,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ExpandedForecastSix.class);
         startActivity(intent);
     }
+    public void NotDank(View view) {
+        Intent intent = new Intent(this, NotDank.class);
+        startActivity(intent);
+    }
 }
