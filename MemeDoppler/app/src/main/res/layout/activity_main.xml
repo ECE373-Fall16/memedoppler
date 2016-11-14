@@ -55,12 +55,10 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/snowmeme"
         android:background="@color/colorPrimaryDark"
         android:columnCount="4"
         android:rowCount="4">
-
     </GridLayout>
 
     <!--<EditText android:id="@+id/edit_message"
