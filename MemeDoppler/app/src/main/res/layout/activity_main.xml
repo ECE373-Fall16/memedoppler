@@ -21,7 +21,9 @@
     <Button
         android:id="@+id/snowmeme"
         android:layout_width="match_parent"
-        android:layout_height="1250px"
+        android:layout_height="1000px"
+        android:layout_marginLeft="150px"
+        android:layout_marginRight="150px"
         android:text=""
         android:background="@drawable/snowmemexxxhdpi"
         android:layout_below="@+id/meme_doppler_top"
@@ -29,8 +31,6 @@
         android:layout_alignParentStart="true"
         android:onClick="largeImage"
         android:src="@drawable/snowmemexxxhdpi"
-        android:paddingLeft="200px"
-        android:paddingRight="200px"
         />
 
     <TextView
@@ -42,6 +42,15 @@
         android:paddingTop="15px"
         android:paddingBottom="15px"
         android:layout_below="@+id/snowmeme"/>
+
+    <Button
+        android:id="@+id/location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/current_weather_text"
+        android:layout_centerHorizontal="true"
+        android:text="Amherst, MA"
+        />
 
     <GridLayout
         android:layout_width="match_parent"
