@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         int date = c.get(Calendar.DATE);
         // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
         // currentWeatherText.setText(date);
+
         Button dank = (Button) findViewById(R.id.Dank);
         dank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,117 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
             }
         });
+
+        View RelativeLayout = (View)findViewById(R.id.content_main);
+        RelativeLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                // your on click here
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                // your on onDoubleClick here
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                // your on onLongClick here
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "SwipeUp", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View mainMeme = (View)findViewById(R.id.main_Meme);
+        RelativeLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                // your on onDoubleClick here
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                // your on onLongClick here
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "SwipeUp", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
     }
     public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
@@ -44,10 +156,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /* Called when the user clicks the Send button */
-    public void largeImage(View view) {
-        Intent intent = new Intent(this, ExpandedMeme.class);
-        startActivity(intent);
-    }
+
     public void ExpandedForecastOne(View view) {
         Intent intent = new Intent(this, ExpandedForecastOne.class);
         startActivity(intent);

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -18,7 +19,7 @@
         />
 
     <Button
-        android:id="@+id/snowmeme"
+        android:id="@+id/main_Meme"
         android:layout_width="match_parent"
         android:layout_height="1000px"
         android:layout_marginLeft="150px"
@@ -27,7 +28,6 @@
         android:layout_below="@+id/meme_doppler_top"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="largeImage"
         android:src="@drawable/snowmemexxxhdpi"
         />
     <Button
@@ -47,7 +47,7 @@
         android:textAlignment="center"
         android:paddingTop="15px"
         android:paddingBottom="15px"
-        android:layout_below="@+id/snowmeme"/>
+        android:layout_below="@+id/main_Meme"/>
 
     <Button
         android:id="@+id/location_button"
@@ -177,7 +177,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/snowmeme"
+        android:layout_below="@+id/main_Meme"
         android:background="@color/colorPrimaryDark"
         android:columnCount="4"
         android:rowCount="4"
@@ -192,7 +192,8 @@
         android:src="@drawable/snowmemexxxhdpi"
         android:layout_alignBottom="@+id/gridLayout"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/meme_doppler_top" />
 
     <!--<EditText android:id="@+id/edit_message"
         android:layout_weight="1"

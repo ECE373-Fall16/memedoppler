@@ -23,7 +23,7 @@
         android:textAlignment="center"
         />
     <Button
-        android:id="@+id/snowmeme"
+        android:id="@+id/main_Meme"
         android:layout_width="fill_parent"
         android:layout_height="1250px"
         android:layout_centerInParent="true"
