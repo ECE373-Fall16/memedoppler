@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
@@ -20,6 +21,11 @@ public class UserLocation extends AppCompatActivity {
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
+        AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                .setTypeFilter(AutocompleteFilter.TYPE_FILTER_REGIONS)
+                .build();
+
+        autocompleteFragment.setFilter(typeFilter);
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             public static final String TAG = "UserLocation";
 
