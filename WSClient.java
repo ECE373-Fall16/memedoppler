@@ -1,8 +1,11 @@
+
 //Thanks to Glenn Mazza and his blog for this code and tutorials
 
 package client;
 
 import java.io.StringReader;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
@@ -21,6 +24,10 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
 import javax.xml.ws.soap.SOAPFaultException;
+import org.json.JSONObject;
+import org.json.XML;
+
+
 
 public class WSClient {
 
@@ -88,7 +95,8 @@ public class WSClient {
             SOAPPart env = geocodeMsg.getSOAPPart();
             env.setContent(zipResponse);
             // writeTo method outputs SOAPMessage, helpful for debugging
-            // geocodeMsg.writeTo(System.out);
+            //geocodeMsg.writeTo(System.out);
+
 
             if (geocodeMsg.getSOAPBody().hasFault()) {
                 // Copy official error response into our LNF Fault
@@ -159,7 +167,9 @@ public class WSClient {
             smDispatch = service.createDispatch(portName,
                     SOAPMessage.class, Service.Mode.MESSAGE);
             SOAPMessage weatherMsg = smDispatch.invoke(getWeatherMsg);
-            // weatherMsg.writeTo(System.out); // debugging only
+            //weatherMsg.writeTo(System.out); // debugging only
+
+
 
             // Metro needs normalize() command because it breaks
             // up child dwml element into numerous text nodes.
@@ -172,7 +182,10 @@ public class WSClient {
             String weatherResponse = weatherMsg.getSOAPBody().
                     getElementsByTagName("dwmlOut")
                     .item(0).getFirstChild().getNodeValue();
-            System.out.println("WR: " + weatherResponse);
+            JSONObject obj = XML.toJSONObject(weatherResponse);
+
+            System.out.println(obj.toString());
+            //System.out.println("WR: " + weatherResponse);
         } catch (SOAPFaultException e) {
             System.out.println("SOAPFaultException: " + e.getFault().getFaultString());
         } catch (Exception e) {

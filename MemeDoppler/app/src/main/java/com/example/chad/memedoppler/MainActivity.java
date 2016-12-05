@@ -38,27 +38,60 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
             @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View mainMeme = (View)findViewById(R.id.main_Meme);
+        mainMeme.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
             public void onClick() {
                 super.onClick();
-                // your on click here
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent);
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                // your on onDoubleClick here
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent);
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                // your on onLongClick here
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent);
             }
 
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "SwipeUp", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -88,32 +121,319 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        View mainMeme = (View)findViewById(R.id.main_Meme);
-        RelativeLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+        View forecastOneView = (View)findViewById(R.id.forecastOne);
+        forecastOneView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
                 startActivity(intent);
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                // your on onDoubleClick here
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
+                startActivity(intent);
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                // your on onLongClick here
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
+                startActivity(intent);
             }
 
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "SwipeUp", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View forecastTwoView = (View)findViewById(R.id.forecastTwo);
+        forecastTwoView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View forecastThreeView = (View)findViewById(R.id.forecastThree);
+        forecastThreeView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View forecastFourView = (View)findViewById(R.id.forecastFour);
+        forecastFourView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View forecastFiveView = (View)findViewById(R.id.forecastFive);
+        forecastFiveView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeDown() {
+                super.onSwipeDown();
+                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Intent intent = new Intent(getApplicationContext(), NotDank.class);
+                startActivity(intent);
+                Button notDank = (Button) findViewById(R.id.NotDank);
+                notDank.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        View forecastSixView = (View)findViewById(R.id.forecastSix);
+        forecastSixView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDoubleClick() {
+                super.onDoubleClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick() {
+                super.onLongClick();
+                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -160,30 +480,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);//*/
     }
 
-    public void ExpandedForecastOne(View view) {
-        Intent intent = new Intent(this, ExpandedForecastOne.class);
-        startActivity(intent);
-    }
-    public void ExpandedForecastTwo(View view) {
-        Intent intent = new Intent(this, ExpandedForecastTwo.class);
-        startActivity(intent);
-    }
-    public void ExpandedForecastThree(View view) {
-        Intent intent = new Intent(this, ExpandedForecastThree.class);
-        startActivity(intent);
-    }
-    public void ExpandedForecastFour(View view) {
-        Intent intent = new Intent(this, ExpandedForecastFour.class);
-        startActivity(intent);
-    }
-    public void ExpandedForecastFive(View view) {
-        Intent intent = new Intent(this, ExpandedForecastFive.class);
-        startActivity(intent);
-    }
-    public void ExpandedForecastSix(View view) {
-        Intent intent = new Intent(this, ExpandedForecastSix.class);
-        startActivity(intent);
-    }
     public void NotDank(View view) {
         Intent intent = new Intent(this, NotDank.class);
         startActivity(intent);
