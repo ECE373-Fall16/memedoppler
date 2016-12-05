@@ -65,7 +65,6 @@
         android:layout_below="@+id/location_button"
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast1"
-        android:onClick="ExpandedForecastOne"
         />
     <Button
         android:id="@+id/forecastTwo"
@@ -75,7 +74,6 @@
         android:layout_toRightOf="@id/forecastOne"
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast2"
-        android:onClick="ExpandedForecastTwo"
         />
     <Button
         android:id="@+id/forecastThree"
@@ -84,9 +82,7 @@
         android:layout_below="@+id/location_button"
         android:layout_toRightOf="@id/forecastTwo"
         android:layout_marginTop="50px"
-
         android:background="@drawable/ldpiforecast3"
-        android:onClick="ExpandedForecastThree"
         />
     <Button
         android:id="@+id/forecastFour"
@@ -95,7 +91,6 @@
         android:layout_below="@+id/forecastOne"
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast4"
-        android:onClick="ExpandedForecastFour"
         />
     <Button
         android:id="@+id/forecastFive"
@@ -105,7 +100,6 @@
         android:layout_toRightOf="@id/forecastFour"
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast5"
-        android:onClick="ExpandedForecastFive"
         />
     <Button
         android:id="@+id/forecastSix"
@@ -115,7 +109,6 @@
         android:layout_toRightOf="@id/forecastFive"
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast6"
-        android:onClick="ExpandedForecastSix"
         />
     <TextView
         android:id="@+id/forecastOneText"
