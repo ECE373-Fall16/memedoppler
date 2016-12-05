@@ -27,6 +27,11 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
-    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.google.android.gms:play-services-places:9.8.0'
+    compile 'com.google.android.gms:play-services-location:9.8.0'
+    compile 'com.google.android.gms:play-services-maps:9.8.0'
+    /* This is not the most current version of play services. The emulators
+     * do not currently support v10.0.1, so an older version needs to be used
+     * for testing on the emulator. */
     testCompile 'junit:junit:4.12'
 }
