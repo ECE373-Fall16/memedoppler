@@ -1,18 +1,16 @@
 package com.example.chad.memedoppler;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import java.util.Calendar;
 
@@ -156,6 +154,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /* Called when the user clicks the Send button */
+
+    public void LocationButton(View view) {
+        Intent intent = new Intent(this, UserLocation.class);
+        startActivity(intent);//*/
+    }
 
     public void ExpandedForecastOne(View view) {
         Intent intent = new Intent(this, ExpandedForecastOne.class);
