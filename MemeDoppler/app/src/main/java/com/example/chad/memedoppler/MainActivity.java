@@ -15,10 +15,15 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    String zip = UserLocation.getZip();
+    String town = UserLocation.getTown();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button locationButton = (Button) findViewById(R.id.location_button);
+        locationButton.setText(town);
         //Calendar c = Calendar.getInstance();
         // int date = c.get(Calendar.DATE);
         // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
@@ -475,7 +480,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void LocationButton(View view) {
         Intent intent = new Intent(this, UserLocation.class);
-        startActivity(intent);//*/
+        startActivity(intent);
     }
 
     public void NotDank(View view) {

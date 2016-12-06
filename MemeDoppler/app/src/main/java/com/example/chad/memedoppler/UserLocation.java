@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,12 +28,12 @@ import java.util.StringTokenizer;
 
 public class UserLocation extends AppCompatActivity {
 
-    public String zip = "01003";
+    public static String zip = "01003";
     public String locality = "Amherst, MA, USA";
     public String townName = "Amherst";
     public String afterTown = "MA";
     public String stateName = "MA";
-    public String town = "Amherst, MA";
+    public static String town = "Amherst, MA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,11 +102,11 @@ public class UserLocation extends AppCompatActivity {
         });
     }
 
-    public String getZip() {
+    public static String getZip() {
         return zip;
     }
 
-    public String getTown() {
+    public static String getTown() {
         return town;
     }
 
