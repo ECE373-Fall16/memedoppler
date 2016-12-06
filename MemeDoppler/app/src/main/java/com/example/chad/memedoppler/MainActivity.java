@@ -15,14 +15,12 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    // public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Toast.makeText(MainActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
-        Calendar c = Calendar.getInstance();
-        int date = c.get(Calendar.DATE);
+        //Calendar c = Calendar.getInstance();
+        // int date = c.get(Calendar.DATE);
         // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
         // currentWeatherText.setText(date);
 

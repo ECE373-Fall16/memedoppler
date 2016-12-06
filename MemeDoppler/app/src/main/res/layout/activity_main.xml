@@ -30,6 +30,7 @@
         android:layout_alignParentStart="true"
         android:src="@drawable/snowmemexxxhdpi"
         />
+
     <Button
         android:id="@+id/NotDank"
         android:layout_width="150px"
@@ -47,7 +48,8 @@
         android:textAlignment="center"
         android:paddingTop="15px"
         android:paddingBottom="15px"
-        android:layout_below="@+id/main_Meme"/>
+        android:layout_below="@+id/main_Meme"
+        />
 
     <Button
         android:id="@+id/location_button"
@@ -58,6 +60,7 @@
         android:text="displayLoc"
         android:onClick="LocationButton"
         />
+
     <Button
         android:id="@+id/forecastOne"
         android:layout_width="500px"
@@ -66,6 +69,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast1"
         />
+
     <Button
         android:id="@+id/forecastTwo"
         android:layout_width="500px"
@@ -75,6 +79,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast2"
         />
+
     <Button
         android:id="@+id/forecastThree"
         android:layout_width="500px"
@@ -84,6 +89,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast3"
         />
+
     <Button
         android:id="@+id/forecastFour"
         android:layout_width="500px"
@@ -92,6 +98,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast4"
         />
+
     <Button
         android:id="@+id/forecastFive"
         android:layout_width="500px"
@@ -101,6 +108,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast5"
         />
+
     <Button
         android:id="@+id/forecastSix"
         android:layout_width="500px"
@@ -110,6 +118,7 @@
         android:layout_marginTop="50px"
         android:background="@drawable/ldpiforecast6"
         />
+
     <TextView
         android:id="@+id/forecastOneText"
         android:layout_width="500px"
@@ -119,6 +128,7 @@
         android:layout_below="@+id/forecastOne"
         android:textAlignment="center"
         />
+
     <TextView
         android:id="@+id/forecastTwoText"
         android:layout_width="500px"
@@ -129,6 +139,7 @@
         android:layout_toRightOf="@id/forecastOneText"
         android:textAlignment="center"
         />
+
     <TextView
         android:id="@+id/forecastThreeText"
         android:layout_width="500px"
@@ -139,6 +150,7 @@
         android:layout_toRightOf="@id/forecastTwoText"
         android:textAlignment="center"
         />
+
     <TextView
         android:id="@+id/forecastFourText"
         android:layout_width="500px"
@@ -148,6 +160,7 @@
         android:layout_below="@+id/forecastFour"
         android:textAlignment="center"
         />
+
     <TextView
         android:id="@+id/forecastFiveText"
         android:layout_width="500px"
@@ -158,6 +171,7 @@
         android:layout_toRightOf="@id/forecastFourText"
         android:textAlignment="center"
         />
+
     <TextView
         android:id="@+id/forecastSixText"
         android:layout_width="500px"
@@ -168,6 +182,7 @@
         android:layout_toRightOf="@id/forecastFiveText"
         android:textAlignment="center"
         />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -187,9 +202,10 @@
         android:layout_alignBottom="@+id/gridLayout"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/meme_doppler_top" />
+        android:layout_below="@+id/meme_doppler_top"
+        />
 
-    <!--<EditText android:id="@+id/edit_message"
+    <!-- <EditText android:id="@+id/edit_message"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
