@@ -1,5 +1,6 @@
 package com.example.chad.memedoppler;
 
+import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ResultCallback;
@@ -21,10 +23,15 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.StringTokenizer;
 
 public class UserLocation extends AppCompatActivity {
 
     public String zip = "01003";
+    public String locality = "Amherst, MA, USA";
+    public String townName = "Amherst";
+    public String afterTown = "MA";
+    public String stateName = "MA";
     public String town = "Amherst, MA";
 
     @Override
@@ -60,9 +67,22 @@ public class UserLocation extends AppCompatActivity {
                             Log.i(TAG, "ZIP: " + zip);
                         }
                         if (addresses.get(0).getLocality() != null) {
-                            town = addresses.get(0).getLocality();
-                            Log.i(TAG, "Locality: " + town);
+                            locality = addresses.get(0).getLocality();
+                            Log.i(TAG, "Locality: " + locality);
                         }
+                    }
+                    StringTokenizer townToken = new StringTokenizer((String) place.getAddress(), ",");
+                    townName = townToken.nextToken();
+                    if (townToken.hasMoreTokens()) {
+                        afterTown = townToken.nextToken();
+                        StringTokenizer afterTownToken = new StringTokenizer(afterTown);
+                        stateName = afterTownToken.nextToken();
+                        town = townName + ", " + stateName;
+                    }
+                    else {
+                        afterTown = "";
+                        stateName = "";
+                        town = townName;
                     }
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent); // Exit the location pane and return to main activity
