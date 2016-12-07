@@ -4,15 +4,20 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     String zip = UserLocation.getZip();
@@ -24,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button locationButton = (Button) findViewById(R.id.location_button);
         locationButton.setText(town);
-        //Calendar c = Calendar.getInstance();
-        // int date = c.get(Calendar.DATE);
-        // final TextView currentWeatherText = (TextView)findViewById(R.id.current_weather_text);
-        // currentWeatherText.setText(date);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+        TextView currentWeatherText = (TextView) findViewById(R.id.current_weather_text);
+        currentWeatherText.setText("Last updated: " + dateFormat.format(cal.getTime()));
 
         Button dank = (Button) findViewById(R.id.Dank);
         dank.setOnClickListener(new View.OnClickListener() {
