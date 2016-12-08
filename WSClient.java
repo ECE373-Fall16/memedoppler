@@ -4,8 +4,12 @@
 package client;
 
 import java.io.StringReader;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
@@ -26,6 +30,12 @@ import javax.xml.ws.Service;
 import javax.xml.ws.soap.SOAPFaultException;
 import org.json.JSONObject;
 import org.json.XML;
+import org.apache.commons.net.PrintCommandListener;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.apache.commons.net.ftp.FTPReply;
+import static org.junit.Assert.assertTrue;
 
 
 
@@ -40,6 +50,8 @@ public class WSClient {
     }
 
     public void getWeatherForecast(String zipCode) {
+
+        JSONObject obj = null;
 
         try {
             // Convert the ZIP code to a geocoded value (which is needed
@@ -182,7 +194,7 @@ public class WSClient {
             String weatherResponse = weatherMsg.getSOAPBody().
                     getElementsByTagName("dwmlOut")
                     .item(0).getFirstChild().getNodeValue();
-            JSONObject obj = XML.toJSONObject(weatherResponse);
+            obj = XML.toJSONObject(weatherResponse);
 
             System.out.println(obj.toString());
             //System.out.println("WR: " + weatherResponse);
@@ -190,6 +202,153 @@ public class WSClient {
             System.out.println("SOAPFaultException: " + e.getFault().getFaultString());
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
+        }
+
+        // Beginning of writing String to File
+
+        File file = new File("c:/newfile.txt");
+        String content = obj.toString();
+
+        try (FileOutputStream fop = new FileOutputStream(file)) {
+
+            // if file doesn't exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // get the content in bytes
+            byte[] contentInBytes = content.getBytes();
+
+            fop.write(contentInBytes);
+            fop.flush();
+            fop.close();
+
+            System.out.println("Done");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Beginning of sending File to Server
+
+        /*FTPClient con = null;
+
+        try
+        {
+            con = new FTPClient();
+            con.connect("ftp.memedoppler.com");
+
+            if (con.login("WeatherData@memedoppler.com", "abeV!godalives"))
+            {
+                con.enterLocalPassiveMode(); // important!
+                con.setFileType(FTP.BINARY_FILE_TYPE);
+                String data = "c:/newfile.txt";
+
+                FileInputStream in = new FileInputStream(data);
+                //boolean result =
+                con.storeFile("/home/memeicou/public_html/WeatherData/newfile.txt", in);
+                in.close();
+                //if (result) Log.v("upload result", "succeeded");
+                con.logout();
+                con.disconnect();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        } */
+
+        // Second attempt at FTP
+
+        try {
+            FTPFunctions ftpobj = new FTPFunctions("server119.web-hosting.com", 21, "WeatherData@memedoppler.com", "abeV!godalives");
+            ftpobj.uploadFTPFile("C:\\newfile1.txt", "gggggggg.txt", "/");
+            ftpobj.downloadFTPFile("gggggggg.txt", "/newfile2.txt");
+            System.out.println("FTP File downloaded successfully");
+            boolean result = ftpobj.listFTPFiles("/", "gggggggg.txt");
+            System.out.println(result);
+            ftpobj.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+    }
+
+    public class FTPFunctions {
+
+        // Creating FTP Client instance
+        FTPClient ftp = null;
+
+        // Constructor to connect to the FTP Server
+        public FTPFunctions(String host, int port, String username, String password) throws Exception {
+
+            ftp = new FTPClient();
+            ftp.addProtocolCommandListener(new PrintCommandListener(new PrintWriter(System.out)));
+            int reply;
+            ftp.connect(host, port);
+            System.out.println("FTP URL is:" + ftp.getDefaultPort());
+            reply = ftp.getReplyCode();
+            if (!FTPReply.isPositiveCompletion(reply)) {
+                ftp.disconnect();
+                throw new Exception("Exception in connecting to FTP Server");
+            }
+            ftp.login(username, password);
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
+            ftp.enterLocalPassiveMode();
+        }
+
+        // Method to upload the File on the FTP Server
+        public void uploadFTPFile(String localFileFullName, String fileName, String hostDir)
+                throws Exception {
+            try {
+                InputStream input = new FileInputStream(new File(localFileFullName));
+
+                this.ftp.storeFile(hostDir + fileName, input);
+            } catch (Exception e) {
+
+            }
+        }
+
+        // Download the FTP File from the FTP Server
+        public void downloadFTPFile(String source, String destination) {
+            try (FileOutputStream fos = new FileOutputStream(destination)) {
+                this.ftp.retrieveFile(source, fos);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // list the files in a specified directory on the FTP
+        public boolean listFTPFiles(String directory, String fileName) throws IOException {
+            // lists files and directories in the current working directory
+            boolean verificationFilename = false;
+            FTPFile[] files = ftp.listFiles(directory);
+            for (FTPFile file : files) {
+                String details = file.getName();
+                System.out.println(details);
+                if (details.equals(fileName)) {
+                    System.out.println("Correct Filename");
+                    verificationFilename = details.equals(fileName);
+                    assertTrue("Verification Failed: The filename is not updated at the CDN end.", details.equals(fileName));
+                }
+            }
+
+            return verificationFilename;
+        }
+
+        // Disconnect the connection to FTP
+        public void disconnect() {
+            if (this.ftp.isConnected()) {
+                try {
+                    this.ftp.logout();
+                    this.ftp.disconnect();
+                } catch (IOException f) {
+                    // do nothing as file is already saved to server
+                }
+            }
         }
     }
 }
