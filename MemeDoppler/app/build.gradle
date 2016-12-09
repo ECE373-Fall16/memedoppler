@@ -34,4 +34,5 @@ dependencies {
      * do not currently support v10.0.1, so an older version needs to be used
      * for testing on the emulator. */
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
 }
