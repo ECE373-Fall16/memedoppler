@@ -50,6 +50,8 @@ public class UserLocation extends AppCompatActivity {
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             public static final String TAG = "UserLocation";
 
+
+
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
@@ -66,10 +68,6 @@ public class UserLocation extends AppCompatActivity {
                         if (addresses.get(0).getPostalCode() != null) {
                             zip = addresses.get(0).getPostalCode();
                             Log.i(TAG, "ZIP: " + zip);
-                        }
-                        if (addresses.get(0).getLocality() != null) {
-                            locality = addresses.get(0).getLocality();
-                            Log.i(TAG, "Locality: " + locality);
                         }
                     }
                     StringTokenizer townToken = new StringTokenizer((String) place.getAddress(), ",");
