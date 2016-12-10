@@ -43,13 +43,13 @@ public class WSClient {
 
         WSClient wsc = new WSClient();
 
+
         // get forecast by Zip Code
         wsc.getWeatherForecast("01003"); // Amherst
 
     }
 
     public void getWeatherForecast(String zipCode) {
-
         JSONObject obj = null;
 
         try {
@@ -116,7 +116,6 @@ public class WSClient {
                         + zipCode + ": "
                         + fault.getFaultString() + "; " + fault.getDetail().getValue());
             }
-
             // From here: valid geocode is present-- so get weather report next
 
             /*
@@ -205,7 +204,7 @@ public class WSClient {
 
         // Beginning of writing String to File
 
-        File file = new File("c:/newfile.txt");
+        File file = new File("/sdcard/newfile1.txt");
         String content = obj.toString();
 
         try (FileOutputStream fop = new FileOutputStream(file)) {
@@ -241,7 +240,7 @@ public class WSClient {
             {
                 con.enterLocalPassiveMode(); // important!
                 con.setFileType(FTP.BINARY_FILE_TYPE);
-                String data = "c:/newfile.txt";
+                String data = "/sdcard/newfile1.txt";
 
                 FileInputStream in = new FileInputStream(data);
                 //boolean result =
@@ -262,10 +261,10 @@ public class WSClient {
         //LEAVE COMMENTED
         try {
             FTPFunctions ftpobj = new FTPFunctions("server119.web-hosting.com", 21, "WeatherData@memedoppler.com", "abeV!godalives");
-            ftpobj.uploadFTPFile("C:\\newfile1.txt", "gggggggg.txt", "/");
-            ftpobj.downloadFTPFile("gggggggg.txt", "/newfile2.txt");
+            ftpobj.uploadFTPFile("/sdcard/newfile1.txt", "test123.txt", "/");
+            ftpobj.downloadFTPFile("test123.txt", "/sdcard/newfile2.txt");
             System.out.println("FTP File downloaded successfully");
-            boolean result = ftpobj.listFTPFiles("/", "gggggggg.txt");
+            boolean result = ftpobj.listFTPFiles("/", "test123.txt");
             System.out.println(result);
             ftpobj.disconnect();
         } catch (Exception e) {
