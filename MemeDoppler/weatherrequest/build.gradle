@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+configurations {
+    provided
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/commons-net-3.3.jar')
+    provided 'com.google.android:android:2.2.3'
+
+}
+
+sourceCompatibility = "1.9"
+targetCompatibility = "1.9"
+
