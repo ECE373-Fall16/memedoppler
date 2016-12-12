@@ -60,7 +60,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
+            }
+
+            @Override
+            public void onSwipeUp() {
+                super.onSwipeUp();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -112,12 +132,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -169,12 +203,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -226,12 +274,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -283,12 +345,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -340,12 +416,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -397,12 +487,26 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
@@ -454,12 +558,27 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "SwipeDown", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
+                findViewById(R.id.main_Meme).setBackgroundResource(R.drawable.e9);
+                //findViewById(R.id.forecastOne).setBackgroundResource(R.drawable.c9);
+                //findViewById(R.id.forecastTwo).setBackgroundResource(R.drawable.h9);
+                //findViewById(R.id.forecastThree).setBackgroundResource(R.drawable.t9);
+                //findViewById(R.id.forecastFour).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastFive).setBackgroundResource(R.drawable.r9);
+                //findViewById(R.id.forecastSix).setBackgroundResource(R.drawable.e9);
+
             }
 
             @Override
