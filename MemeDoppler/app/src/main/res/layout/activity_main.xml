@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/snowmemexxxhdpi"
+            android:background="@drawable/loading"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:src="@drawable/snowmemexxxhdpi"
@@ -80,21 +80,21 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast1"
+            android:background="@drawable/loading"
             />
         <Button
             android:id="@+id/forecastTwo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast2"
+            android:background="@drawable/loading"
             />
         <Button
             android:id="@+id/forecastThree"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast3"
+            android:background="@drawable/loading"
             />
     </LinearLayout>
 
@@ -144,21 +144,21 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast4"
+            android:background="@drawable/loading"
             />
         <Button
             android:id="@+id/forecastFive"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast5"
+            android:background="@drawable/loading"
             />
         <Button
             android:id="@+id/forecastSix"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast6"
+            android:background="@drawable/loading"
             />
     </LinearLayout>
 
