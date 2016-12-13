@@ -30,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast1"
+            android:background="@mipmap/e0"
             android:onClick="MainActivity"
             />
         <Button
@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast2"
+            android:background="@mipmap/c0"
             android:onClick="MainActivity"
             />
     </LinearLayout>
@@ -54,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast3"
+            android:background="@mipmap/h0"
             android:onClick="MainActivity"
             />
         <Button
@@ -62,7 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast4"
+            android:background="@mipmap/t0"
             android:onClick="MainActivity"
             />
     </LinearLayout>
@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast5"
+            android:background="@mipmap/r0"
             android:onClick="MainActivity"
             />
         <Button
@@ -86,7 +86,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:background="@drawable/ldpiforecast6"
+            android:background="@mipmap/r3"
             android:onClick="MainActivity"
             />
     </LinearLayout>
