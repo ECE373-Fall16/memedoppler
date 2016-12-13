@@ -43,7 +43,6 @@ public class UserLocation extends AppCompatActivity {
 
             @Override
             public void onPlaceSelected(Place place) {
-                // TODO: Get info about the selected place.
                 Log.i(TAG, "Place: " + place.getAddress());
                 Log.i(TAG, "Place: " + place.getId());
                 Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());

@@ -1,18 +1,9 @@
 package com.example.chad.memedoppler;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,12 +11,9 @@ import android.widget.Toast;
 
 import com.example.*;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     String zip = UserLocation.getZip();
@@ -35,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*WSClient wsc = new WSClient();
+        //WSClient wsc = new WSClient();
 
         // get forecast by Zip Code
-        wsc.getWeatherForecast(zip); // Amherst */
+        // wsc.getWeatherForecast(zip); // Amherst */
         Button locationButton = (Button) findViewById(R.id.location_button);
         locationButton.setText(town);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
