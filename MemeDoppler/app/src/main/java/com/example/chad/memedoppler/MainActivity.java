@@ -40,6 +40,9 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     String zip = UserLocation.getZip();
     String town = UserLocation.getTown();
+    String[] currentWeather = new String[] {"loading","loading","loading","loading","loading","loading","loading"};
+    int[] imageId = new int[] {R.id.main_Meme,R.id.forecastOne,R.id.forecastTwo,R.id.forecastThree,R.id.forecastFour,R.id.forecastFive,R.id.forecastSix};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
         locationButton.setText(town);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Calendar cal = Calendar.getInstance();
-        TextView currentWeatherText = (TextView) findViewById(R.id.current_weather_text);
+        final TextView currentWeatherText = (TextView) findViewById(R.id.current_weather_text);
         currentWeatherText.setText("Last updated: " + dateFormat.format(cal.getTime()));
 
         Button dank = (Button) findViewById(R.id.Dank);
         dank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,41 +73,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -116,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -124,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -155,41 +132,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -201,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -209,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -240,41 +191,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -286,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -294,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -325,43 +250,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onSwipeLeft() {
                 super.onSwipeLeft();
@@ -371,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -379,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -410,41 +308,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -456,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -464,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -495,41 +367,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -541,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -549,7 +395,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -580,41 +426,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -626,7 +446,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -634,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -665,42 +485,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                imageDownload("e9",R.id.main_Meme);
-                imageDownload("c9",R.id.forecastOne);
-                imageDownload("h9",R.id.forecastTwo);
-                imageDownload("t9",R.id.forecastThree);
-                imageDownload("r9",R.id.forecastFour);
-                imageDownload("r9",R.id.forecastFive);
-                imageDownload("e9",R.id.forecastSix);
-                //imageDownload("e_",R.id.main_Meme);
-                //imageDownload("c_",R.id.forecastOne);
-                //imageDownload("h_",R.id.forecastTwo);
-                //imageDownload("t_",R.id.forecastThree);
-                //imageDownload("r_",R.id.forecastFour);
-                //imageDownload("r_",R.id.forecastFive);
-                //imageDownload("e_",R.id.forecastSix);
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
-                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //imageDownload("e9",R.id.main_Meme);
-                //imageDownload("c9",R.id.forecastOne);
-                //imageDownload("h9",R.id.forecastTwo);
-                //imageDownload("t9",R.id.forecastThree);
-                //imageDownload("r9",R.id.forecastFour);
-                //imageDownload("r9",R.id.forecastFive);
-                //imageDownload("e9",R.id.forecastSix);
-                imageDownload("e_",R.id.main_Meme);
-                imageDownload("c_",R.id.forecastOne);
-                imageDownload("h_",R.id.forecastTwo);
-                imageDownload("t_",R.id.forecastThree);
-                imageDownload("r_",R.id.forecastFour);
-                imageDownload("r_",R.id.forecastFive);
-                imageDownload("e_",R.id.forecastSix);
-
+                getWeather();
+                Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -712,7 +505,7 @@ public class MainActivity extends AppCompatActivity {
                 notDank.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -720,21 +513,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
 
             }
         });
 
     }
-    public static int getScreenWidth() {
-        return Resources.getSystem().getDisplayMetrics().widthPixels;
-    }
 
-    public static int getScreenHeight() {
-        return Resources.getSystem().getDisplayMetrics().heightPixels;
-    }
-
-    /* Called when the user clicks the Send button */
+/* Called when the user clicks the Send button */
 
     public void LocationButton(View view) {
         Intent intent = new Intent(this, UserLocation.class);
@@ -748,14 +534,20 @@ public class MainActivity extends AppCompatActivity {
         notDank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void imageDownload(String imgName, int imgId){
-        imgName = "http://memedoppler.com/memes/"+ imgName + ".jpg";
-        MyButton myButton = (MyButton) findViewById(imgId);
-        Picasso.with(getApplicationContext()).load(imgName).into(myButton);
+    public void imageDownload(String[] imgName, int[] imgId){
+        for (int j = 0; j < 7; j++) {
+            imgName[j] = "http://memedoppler.com/memes/" + imgName[j] + ".jpg";
+            MyButton myButton = (MyButton) findViewById(imgId[j]);
+            Picasso.with(getApplicationContext()).load(imgName[j]).into(myButton);
+        }
+    }
+    public void getWeather(){
+        currentWeather = new String[] {"e_","c_","h_","t_","r_","r_","e_"};
+        imageDownload(currentWeather,imageId);
     }
 }
