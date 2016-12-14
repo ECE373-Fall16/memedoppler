@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:onClick="NotDank"
             />
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/main_Meme"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -74,21 +74,21 @@
         android:layout_height="0dp"
         android:layout_weight="12"
         android:orientation="horizontal">
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastOne"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:background="@mipmap/loading"
             />
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastTwo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:background="@mipmap/loading"
             />
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastThree"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -138,21 +138,21 @@
         android:layout_height="0dp"
         android:layout_weight="12"
         android:orientation="horizontal">
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastFour"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:background="@mipmap/loading"
             />
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastFive"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
             android:background="@mipmap/loading"
             />
-        <Button
+        <com.example.chad.memedoppler.MyButton
             android:id="@+id/forecastSix"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -196,17 +196,5 @@
             android:textAlignment="center"
             />
     </LinearLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0"
-        android:background="@color/colorPrimaryDark"
-        android:columnCount="4"
-        android:rowCount="4"
-        android:id="@+id/gridLayout">
-    </GridLayout>
-
-
 
 </LinearLayout>

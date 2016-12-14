@@ -31,8 +31,9 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:9.8.0'
     compile 'com.google.android.gms:play-services-maps:9.8.0'
     /* This is not the most current version of play services. The emulators
-         * do not currently support v10.0.1, so an older version needs to be used
-         * for testing on the emulator. */
+             * do not currently support v10.0.1, so an older version needs to be used
+             * for testing on the emulator. */
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile 'co.roverlabs:picasso:2.5.2'
 }

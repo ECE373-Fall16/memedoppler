@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -15,12 +18,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.*;
+import com.squareup.picasso.Picasso;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -61,40 +71,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -146,40 +156,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -231,40 +241,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -316,40 +326,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -401,40 +411,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -486,40 +496,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -571,40 +581,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
@@ -656,40 +666,40 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeUp() {
                 super.onSwipeUp();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                imageDownload("e9",R.id.main_Meme);
+                imageDownload("c9",R.id.forecastOne);
+                imageDownload("h9",R.id.forecastTwo);
+                imageDownload("t9",R.id.forecastThree);
+                imageDownload("r9",R.id.forecastFour);
+                imageDownload("r9",R.id.forecastFive);
+                imageDownload("e9",R.id.forecastSix);
+                //imageDownload("e_",R.id.main_Meme);
+                //imageDownload("c_",R.id.forecastOne);
+                //imageDownload("h_",R.id.forecastTwo);
+                //imageDownload("t_",R.id.forecastThree);
+                //imageDownload("r_",R.id.forecastFour);
+                //imageDownload("r_",R.id.forecastFive);
+                //imageDownload("e_",R.id.forecastSix);
             }
 
             @Override
             public void onSwipeDown() {
                 super.onSwipeDown();
                 Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
-                //findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e9);
-                //findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c9);
-                //findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h9);
-                //findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t9);
-                //findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r9);
-                //findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e9);
-                findViewById(R.id.main_Meme).setBackgroundResource(R.mipmap.e_);
-                findViewById(R.id.forecastOne).setBackgroundResource(R.mipmap.c_);
-                findViewById(R.id.forecastTwo).setBackgroundResource(R.mipmap.h_);
-                findViewById(R.id.forecastThree).setBackgroundResource(R.mipmap.t_);
-                findViewById(R.id.forecastFour).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastFive).setBackgroundResource(R.mipmap.r_);
-                findViewById(R.id.forecastSix).setBackgroundResource(R.mipmap.e_);
+                //imageDownload("e9",R.id.main_Meme);
+                //imageDownload("c9",R.id.forecastOne);
+                //imageDownload("h9",R.id.forecastTwo);
+                //imageDownload("t9",R.id.forecastThree);
+                //imageDownload("r9",R.id.forecastFour);
+                //imageDownload("r9",R.id.forecastFive);
+                //imageDownload("e9",R.id.forecastSix);
+                imageDownload("e_",R.id.main_Meme);
+                imageDownload("c_",R.id.forecastOne);
+                imageDownload("h_",R.id.forecastTwo);
+                imageDownload("t_",R.id.forecastThree);
+                imageDownload("r_",R.id.forecastFour);
+                imageDownload("r_",R.id.forecastFive);
+                imageDownload("e_",R.id.forecastSix);
 
             }
 
@@ -741,5 +751,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Thanks for your feedback!", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void imageDownload(String imgName, int imgId){
+        imgName = "http://memedoppler.com/memes/"+ imgName + ".jpg";
+        MyButton myButton = (MyButton) findViewById(imgId);
+        Picasso.with(getApplicationContext()).load(imgName).into(myButton);
     }
 }
