@@ -1,0 +1,12 @@
+notifications:
+  email:
+    recipients:
+      - cklinefelter@umass.edu
+
+    on_success: change
+    on_failure: always
+
+language: php
+php:
+  - 5.5
+script: phpunit Test.php
