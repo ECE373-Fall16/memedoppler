@@ -12,7 +12,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 public class MainActivity extends AppCompatActivity {
     String zip = UserLocation.getZip();
     String town = UserLocation.getTown();
@@ -27,10 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button locationButton = (Button) findViewById(R.id.location_button);
         locationButton.setText(town);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Calendar cal = Calendar.getInstance();
-        final TextView currentWeatherText = (TextView) findViewById(R.id.current_weather_text);
-        currentWeatherText.setText("Last updated: " + dateFormat.format(cal.getTime()));
+        lastRefresh();
 
         Button dank = (Button) findViewById(R.id.Dank);
         dank.setOnClickListener(new View.OnClickListener() {
@@ -40,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        View RelativeLayout = (View)findViewById(R.id.content_main);
-        RelativeLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+        View LinearLayout = (View)findViewById(R.id.content_main);
+        LinearLayout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
             @Override
             public void onSwipeDown() {
@@ -85,21 +81,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick() {
                 super.onClick();
                 Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
-                startActivity(intent);
+                startActivity(intent.putExtra("imageId",imageId[0]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
                 Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
-                startActivity(intent);
+                startActivity(intent.putExtra("imageId",imageId[0]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
                 Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
-                startActivity(intent);
+                startActivity(intent.putExtra("imageId",imageId[0]));
             }
 
             @Override
@@ -143,22 +139,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[1]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[1]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastOne.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[1]));
             }
 
             @Override
@@ -202,22 +198,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[2]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[2]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastTwo.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[2]));
             }
 
             @Override
@@ -260,22 +256,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[3]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[3]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastThree.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[3]));
             }
 
             @Override
@@ -319,22 +315,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[4]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[4]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFour.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[4]));
             }
 
             @Override
@@ -378,22 +374,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[5]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[5]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastFive.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[5]));
             }
 
             @Override
@@ -437,22 +433,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick() {
                 super.onClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[6]));
             }
 
             @Override
             public void onDoubleClick() {
                 super.onDoubleClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[6]));
             }
 
             @Override
             public void onLongClick() {
                 super.onLongClick();
-                Intent intent = new Intent(getApplicationContext(), ExpandedForecastSix.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ExpandedMeme.class);
+                startActivity(intent.putExtra("imageId",imageId[6]));
             }
 
             @Override
@@ -522,5 +518,12 @@ public class MainActivity extends AppCompatActivity {
     public void getWeather(){
         currentWeather = new String[] {"e_","c_","h_","t_","r_","r_","e_"};
         imageDownload(currentWeather,imageId);
+        lastRefresh();
+    }
+    public void lastRefresh(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+        final TextView currentWeatherText = (TextView) findViewById(R.id.current_weather_text);
+        currentWeatherText.setText("Last updated: " + dateFormat.format(cal.getTime()));
     }
 }
