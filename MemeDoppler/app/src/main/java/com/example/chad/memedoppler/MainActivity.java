@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     String[] currentWeather = new String[] {"loading","loading","loading","loading","loading","loading","loading"};
     int[] imageId = new int[] {R.id.main_Meme,R.id.forecastOne,R.id.forecastTwo,R.id.forecastThree,R.id.forecastFour,R.id.forecastFive,R.id.forecastSix};
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button locationButton = (Button) findViewById(R.id.location_button);
         locationButton.setText(town);
+        getWeather();
         lastRefresh();
 
         Button dank = (Button) findViewById(R.id.Dank);
