@@ -1,2 +1,2 @@
 # memedoppler
-Noah Brayer, Dennis Michael Donoghue, Chad Klinefelter, and Kevin Moriarty
+Noah Brayer, Dennis Michael Donoghue, Chad Warren Klinefelter, and Kevin Moriarty
