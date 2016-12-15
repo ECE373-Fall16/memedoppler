@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_expanded_forecast_two"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical"
+    android:background="#000000"
+    >
+    <TextView
+        android:id="@+id/Weather_Info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:background="@color/colorBackground"
+        android:text="Sample Weather Information\n32-Degrees-Celcius\nChance of Percipiation - 98%"
+        android:textAlignment="center"
+        />
+    <View
+        android:id="@+id/invisibleViewOne"
+        android:visibility="visible"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15">
+
+    </View>
+    <Button
+        android:id="@+id/main_Meme"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="60"
+        android:background="@mipmap/h_"
+        android:onClick="MainActivity"
+        />
+    <View
+        android:id="@+id/invisibleViewTwo"
+        android:visibility="visible"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15">
+
+    </View>
+</LinearLayout>
