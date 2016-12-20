@@ -1,5 +1,5 @@
 <?php
-use 'androidServer.php';
+require 'androidServer.php';
  
 class LocationTests extends PHPUnit_Framework_TestCase
 {
