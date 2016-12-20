@@ -13,4 +13,4 @@ php:
   - 5.5
 
 #PHPUnit
-script: phpunit ./Testing/Test.php
+script: phpunit ./PHP/Test.php
